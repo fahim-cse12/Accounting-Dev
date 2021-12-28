@@ -1,0 +1,198 @@
+﻿
+<div ng-app="docApp" ng-controller="homeCtrl" ng-init="HomeOnInit()">
+    @*@Html.Hidden("sharePointUrl", (object)ViewBag.AuthSetting.sharePointUrl.ToString())
+        @Html.Hidden("accessToken", (object)ViewBag.AuthSetting.accessToken.ToString())
+        @Html.Hidden("accountName", (object)ViewBag.AuthSetting.accountName.ToString())*@
+    @*@Html.Hidden("serviceUrl", (object)ViewBag.AuthSetting.serviceUrl.ToString())*@
+
+    @*<link rel="stylesheet" ng-href="{{css}}">*@
+
+    @*<div class="bg-layer"></div>*@
+
+    <!--<div class="top-overlay-layer">
+        <div class="container">
+            <span class="logged-wrap view">
+                <span class="user-icon">
+                    <a href="{{sPHostUrl}}" target="_blank"><img src="../../../Content/images/logo.png" /></a>
+                </span>
+                <span class="user"><span class="u_name">{{currentUser.DisplayName}}</span><span class="u_dep">{{currentUser.Department}}<span ng-show="currentUser.Department != null"> Department</span></span></span>
+                <span class="user-ctrl">-->
+    <!--<span class="signput-link"><a ng-href="{{actionUrls.home}}"><i class="fa fa-sign-out" aria-hidden="true"></i></a></span>-->
+    <!--<span class="home-link"><a title="My Tasks" target="_blank" ng-href="{{actionUrls.task}}"><i class="fa fa-tasks" aria-hidden="true"></i></a></span>
+                    <span class="signput-link"><a title="Administrative Panel" ng-href="{{adminUrls.admin}}"><i class="fa fa-cogs" aria-hidden="true"></i></a></span>
+                </span>
+            </span>
+        </div>
+    </div>-->
+    <div class="dashb-layer">
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="link-sec">
+                    <div class="sec-title">
+                        <span class="title-icon">
+                            <img src="../../Content/images/ODA.png" />
+                        </span><span class="title-text">Online Document Approval</span>
+                    </div>
+                    <div class="sec-body">
+                        <div class="link">
+                            <a ng-href="{{actionUrls.oda}}">ODA Request</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.viewOda}}">My ODA Requests</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.myODAApproval}}">My ODA Approvals</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.adminviewOda}}">All Requests-Admin Panel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="link-sec">
+                    <div class="sec-title">
+                        <span class="title-icon">
+                            <img src="../../Content/images/ODA.png" />
+                        </span><span class="title-text">IT Services</span>
+                    </div>
+                    <div class="sec-body">
+                        <div class="link">
+                            <a ng-href="{{actionUrls.itService}}">IT Service Request</a>
+                        </div>
+                        <div class="link">
+
+                            <a ng-href="{{actionUrls.viewItService}}">My IT Service Requests</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.myItServiceApproval}}">My IT Service Approvals</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.adminviewItService}}">All IT Service Requests-Admin Panel</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <div class="link-sec">
+                    <div class="sec-title">
+                        <span class="title-icon">
+                            <img src="../../Content/images/ODA.png" />
+                        </span><span class="title-text">Cherish SIM</span>
+                    </div>
+                    <div class="sec-body">
+
+                        <div class="link">
+                            <a ng-href="{{actionUrls.cherishSimRequisition}}">New Request</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.cherishSimMyRequest}}">My Requests</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.cherishSimAdminAllRequest}}">All Requests-Admin Panel</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.cherishSimMIISDNAdminAllRequest}}">All Requests Details-Admin Panel</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.cherishSimReconciliation}}">Reconciliation Report</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="link-sec">
+                    <div class="sec-title">
+                        <span class="title-icon">
+                            <img src="../../Content/images/ODA.png" />
+                        </span><span class="title-text">Test And Special SIM Views</span>
+                    </div>
+                    <div class="sec-body">
+
+
+                        <div class="link">
+                            <a ng-href="{{actionUrls.testAndSpecialSimSCMView}}">SCM View</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.testAndSpecialSimWarehouseView}}">Warehouse View</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.testAndSpecialSimB2BView}}">B2B View</a>
+                        </div>
+                        <div class="link">
+                            <a ng-href="{{actionUrls.testAndSpecialSimReports}}">Reports</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<script src="~/App/App.js?20200720"></script>
+<script src="~/App/services/commonService.js"></script>
+<script src="~/App/services/authSettingService.js"></script>
+<script src="~/App/services/appConfig.js"></script>
+<script src="~/App/services/httpService.js"></script>
+<script src="~/App/services/authService.js"></script>
+<script src="~/App/services/queryStringService.js"></script>
+<script src="~/App/directives/ng-single-peoplepicker.js?20200115"></script>
+<script src="~/App/directives/validDecimal.js"></script>
+<script src="~/App/controllers/homeCtrl.js?20200720"></script>
+<script src="~/App/controllers/customerCtrl.js"></script>
+<script src="~/App/controllers/categoryCtrl.js"></script>
+<script src="~/App/controllers/adminUserCtrl.js"></script>
+<script src="~/App/controllers/allocationTypeCtrl.js"></script>
+<script src="~/App/controllers/approvalMappingCtrl.js"></script>
+<script src="~/App/controllers/bulkTaskCtrl.js"></script>
+<script src="~/App/controllers/categorySucategoryCtrl.js"></script>
+<script src="~/App/controllers/configurationCtrl.js?20200720"></script>
+<script src="~/App/controllers/configurationCtrl_v1.js"></script>
+<script src="~/App/controllers/coordinatorCtrl.js"></script>
+<script src="~/App/controllers/currencyCtrl.js"></script>
+<script src="~/App/controllers/delegationCtrl.js"></script>
+<script src="~/App/controllers/delegationUserWFECtrl.js"></script>
+<script src="~/App/controllers/departmentCtrl.js"></script>
+<script src="~/App/controllers/divisionCtrl.js"></script>
+<script src="~/App/controllers/employeeBandCtrl.js"></script>
+<script src="~/App/controllers/employeeTypeCtrl.js"></script>
+<script src="~/App/controllers/expenseTypeCtrl.js"></script>
+<script src="~/App/controllers/financialTypeCtrl.js"></script>
+<script src="~/App/controllers/facilityLocationCtrl.js?20200115"></script>
+<script src="~/App/controllers/InternRequisitionCtrl_v3.2.js?20200720"></script>
+<script src="~/App/controllers/itServiceRequestCtrl_v3.2.js?20200720"></script>
+<script src="~/App/controllers/iTSystemNameCtrl.js"></script>
+<script src="~/App/controllers/iTUserAccessApplicationRoleCtrl.js"></script>
+<script src="~/App/controllers/jobLocationCtrl.js"></script>
+<script src="~/App/controllers/jobLocationFloorCtrl.js"></script>
+<script src="~/App/controllers/mapProductCtrl.js?20200720"></script>
+<script src="~/App/controllers/onlineDocApprovalCtrl_v3.2.js?20200720"></script>
+<script src="~/App/controllers/pmoUserCtrl.js"></script>
+<script src="~/App/controllers/productCategoryCtrl.js?20200213"></script>
+<script src="~/App/controllers/productCtrl.js"></script>
+<script src="~/App/controllers/roleCtrl.js"></script>
+<script src="~/App/controllers/scheduleEmailReceiverCtrl.js"></script>
+<script src="~/App/controllers/travelClaimCtrl_v3.2.js?20200720"></script>
+<script src="~/App/controllers/travelPlanCtrl_v3.2.js?20200720"></script>
+<script src="~/App/controllers/travelRequiredForCtrl.js"></script>
+<script src="~/App/controllers/UserAccessCtrl.js"></script>
+<script src="~/App/services/global.js?20200115"></script>
+<script src="~/App/client/accessrequest/accessrequest.ctrl.js?20200720"></script>
+<script src="~/App/client/testspecialsim/testspecialsim.ctrl.js?20200720"></script>
+<script src="~/App/client/cherishsim/cherishsim.ctrl.js?"></script>
+@Scripts.Render("~/bundles/sweetalert")
+
+
+
+
